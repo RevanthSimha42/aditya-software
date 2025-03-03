@@ -1,0 +1,221 @@
+.expertise {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 90% 80%, rgba(76, 201, 240, 0.05) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.expertise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.expertise-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  padding-bottom: 2rem;
+}
+
+.expertise-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-image-container {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.expertise-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.expertise-card:hover .expertise-image {
+  transform: scale(1.1);
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.expertise-card:hover::before {
+  transform: scaleX(1);
+}
+
+.expertise-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -35px auto 1.5rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-card:hover .expertise-icon {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--white);
+  transform: rotateY(180deg);
+}
+
+.expertise-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.expertise-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.expertise-card:hover h3::after {
+  width: 60px;
+}
+
+.expertise-card p {
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  padding: 0 1.5rem;
+}
+
+.expertise-check {
+  color: var(--primary-color);
+  background-color: rgba(67, 97, 238, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover .expertise-check {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Animation delay for cards */
+.expertise-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.expertise-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+.expertise-card:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.expertise-card:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.expertise-card:nth-child(6) {
+  transition-delay: 0.5s;
+}
+.expertise-card:nth-child(7) {
+  transition-delay: 0.6s;
+}
+.expertise-card:nth-child(8) {
+  transition-delay: 0.7s;
+}
+.expertise-card:nth-child(9) {
+  transition-delay: 0.8s;
+}
+.expertise-card:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+@media (max-width: 768px) {
+  .expertise {
+    padding: 4rem 1.5rem;
+  }
+  
+  .expertise-grid {
+    gap: 1.5rem;
+  }
+  
+  .expertise-card {
+    padding-bottom: 1.5rem;
+  }
+  
+  .expertise-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+  }
+  
+  .expertise-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .expertise-card p {
+    padding: 0 1rem;
+  }
+}
