@@ -1,11 +1,7 @@
 import React from "react";
-import {
-	Code2,
- 	Twitter,
-	Linkedin,
-	Mail,
-} from "lucide-react";
+import { Code2, Twitter, Linkedin, Mail } from "lucide-react";
 import "../styles/Footer.css";
+import logo from "../components/public/logo.png";
 
 const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
@@ -14,7 +10,7 @@ const Footer: React.FC = () => {
 		<footer className="footer">
 			<div className="footer-content">
 				<div className="footer-logo">
-					<Code2 size={28} />
+					<img src={logo} alt="logo" width="100" height="50" />
 					<h2>Aditya Software Solutions</h2>
 					<p>Transforming ideas into powerful digital experiences</p>
 
