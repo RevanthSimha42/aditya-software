@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://aditya-software-solution.netlify.app/sitemap.xml
