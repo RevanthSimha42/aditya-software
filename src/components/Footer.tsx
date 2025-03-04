@@ -15,16 +15,20 @@ const Footer: React.FC = () => {
 					<p>Transforming ideas into powerful digital experiences</p>
 
 					<div className="social-links">
-						{/* <a href="#" aria-label="Facebook"><Facebook size={20} /></a> */}
+						{/* <a href="#" aria-label="Facebook"><Facebook size={20} /></a> 
 						<a href="#" aria-label="Twitter">
 							<Twitter size={20} />
 						</a>
-						{/* <a href="#" aria-label="Instagram"><Instagram size={20} /></a> */}
+						<a href="#" aria-label="Instagram"><Instagram size={20} /></a>
 						<a href="#" aria-label="LinkedIn">
 							<Linkedin size={20} />
 						</a>
-						{/* <a href="#" aria-label="Github"><Github size={20} /></a> */}
-						<a href="#" aria-label="Gmail">
+						<a href="#" aria-label="Github"><Github size={20} /></a>
+						 */}
+						<a
+							href="mailto:recipient@example.com?subject=Hello&body=This is my message."
+							aria-label="Gmail"
+						>
 							<Mail size={20} />
 						</a>
 					</div>

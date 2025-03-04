@@ -37,11 +37,12 @@ const Services: React.FC = () => {
       image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
-      icon: <ShoppingCart size={40} />,
-      title: "E-commerce Solutions",
-      description: "Powerful online stores with secure payment gateways and inventory management.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+      icon: <BarChart size={40} />,
+      title: "Digital Marketing",
+      description: "Strategic marketing campaigns to increase your online visibility and reach.",
+      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
+    
     {
       icon: <Code size={40} />,
       title: "Custom Software",
@@ -54,18 +55,19 @@ const Services: React.FC = () => {
       description: "Intuitive and engaging user experiences that keep visitors coming back.",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
-    {
-      icon: <BarChart size={40} />,
-      title: "Digital Marketing",
-      description: "Strategic marketing campaigns to increase your online visibility and reach.",
-      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    },
+    
     {
       icon: <Smartphone size={40} />,
       title: "Mobile Development",
       description: "Native and cross-platform mobile applications for iOS and Android.",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-    }
+    },
+    {
+      icon: <ShoppingCart size={40} />,
+      title: "E-commerce Solutions",
+      description: "Powerful online stores with secure payment gateways and inventory management.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
   ];
 
   return (
