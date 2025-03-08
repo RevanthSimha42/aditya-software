@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Code2, Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X } from 'lucide-react';
 import '../styles/Header.css';
 import logo from '../components/public/logo.png';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Handle scroll effect for sticky header
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -16,8 +18,21 @@ const Header: React.FC = () => {
       }
     };
 
+    // Handle click outside to close the menu
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listeners
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -28,15 +43,19 @@ const Header: React.FC = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo">
-        <img src={logo} alt="logo" width="100" height="50" />
-          {/* <h1>Aditya Software</h1> */}
+          <img src={logo} alt="logo" width="100" height="50" />
         </div>
-        
+
+        {/* Hamburger Menu */}
         <div className="mobile-menu-button" onClick={toggleMenu}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={30} color="#fff" /> : <Menu size={30} color="#fff" />}
         </div>
-        
-        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+
+        {/* Navigation Links */}
+        <nav 
+          className={`nav-links ${isMenuOpen ? 'open' : ''}`}
+          ref={menuRef}
+        >
           <ul>
             <li><a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             <li><a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a></li>
